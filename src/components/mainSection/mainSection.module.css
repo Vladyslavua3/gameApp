@@ -1,0 +1,26 @@
+.btn{
+    font-size: 18px;
+    width: 240px;
+    height: 40px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-top: 15px;
+    background: linear-gradient(270.68deg, #D13932 -2.79%, #684EA6 58.42%);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+    background-color: #090A12;
+    height: 100vh;
+}
+.fontWhite {
+    color: white;
+    font-weight: normal;
+    font-size: 20px;
+    padding-bottom: 5px;
+}

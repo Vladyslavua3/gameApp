@@ -1,0 +1,27 @@
+.left{
+    width: 5%;
+    background-color:#141733;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.leftHead{
+    position: fixed;
+
+    top: 0;
+    margin: 0 auto;
+}
+
+.logo{
+    margin-top: 5px;
+}
