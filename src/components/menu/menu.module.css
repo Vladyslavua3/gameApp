@@ -57,7 +57,6 @@
     width: 105%;
 }
 
-
 .menu {
   height: 70%;
   display: flex;
@@ -88,4 +87,18 @@
 .ranked {
     margin-top: 10px;
     display: flex;
+}
+
+.active{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 5px;
+    gap: 25px;
+    background-color: #090A12;
+    border-radius: 5px;
+    width: 105%;
 }

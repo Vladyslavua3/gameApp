@@ -4,7 +4,7 @@ import smallWallet from "@/data/img/smallwallet.png";
 import iconSmallProfile from "@/data/img/iconSmallProfile.png";
 import iconSettings from "@/data/img/iconSettings.png";
 import iconRing from "@/data/img/iconRing.png";
-import avatar from "@/data/img/Polygon 1.png";
+import avatar from "@/data/img/avatar.png";
 import rang from "@/data/img/Rang.png";
 import iconTilt from "@/data/img/iconTilt.png";
 import iconChat from "@/data/img/iconChat.png";

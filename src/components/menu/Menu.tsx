@@ -33,7 +33,7 @@ export const Menu = () => {
               </div>
               <div className={styles.menuItem}>
                   <h3>MATCHMAKING</h3>
-                  {matchData.map((title)=> <MatchMakingItems key={title} title={title}/>)}
+                  <MatchMakingItems/>
               </div>
           </div>
           <div className={styles.antiCheat}>

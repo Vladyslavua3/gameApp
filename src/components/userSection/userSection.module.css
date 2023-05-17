@@ -44,7 +44,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 10px;
 }
 
 .boxItem{
@@ -52,7 +52,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
+    padding: 5px;
+    }
 
 
 .tilt{
