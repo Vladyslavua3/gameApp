@@ -1,23 +1,21 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-type initState = {
-    oneVSOne: boolean,
-    fiveVSFive:boolean
-}
 
-const initialState:initState = {
+const initialState = {
     oneVSOne: false,
     fiveVSFive:false
 }
+
+
 
 const slice = createSlice({
     name:'app',
     initialState,
     reducers:{
-        setOneVsOne:(state:initState, action:PayloadAction<{oneVSOne:boolean}>) => {
+        setOneVsOne:(state, action:PayloadAction<{oneVSOne:boolean}>) => {
             state.oneVSOne = action.payload.oneVSOne
         },
-        setFiveVsFive:(state:initState, action:PayloadAction<{fiveVSFive:boolean}>) => {
+        setFiveVsFive:(state, action:PayloadAction<{fiveVSFive:boolean}>) => {
             state.fiveVSFive = action.payload.fiveVSFive
         }
     },

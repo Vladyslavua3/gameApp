@@ -23,8 +23,8 @@ export const Menu = () => {
   return(
       <section className={styles.container}>
           <div className={styles.containerHeader}>
-              <Image src={addButton} alt={''}/>
-              <Image src={iconCounter} alt={''}/>
+              <Image src={addButton} alt={'addButton'}/>
+              <Image src={iconCounter} alt={'iconCounter'}/>
               <h2>ADD GAME</h2>
           </div>
           <div className={styles.menu}>
@@ -37,14 +37,14 @@ export const Menu = () => {
               </div>
           </div>
           <div className={styles.antiCheat}>
-              <Image src={shieldTick} alt={'yes'}/>
+              <Image src={shieldTick} alt={'anti-cheat'}/>
               <h3>Anti-Cheat</h3>
           </div>
           <div className={styles.socialLogos}>
-              <Image src={github} alt={'lo'}/>
-              <Image src={discord} alt={'lo'}/>
-              <Image src={twitter} alt={'lo'}/>
-              <Image src={twitch} alt={'lo'}/>
+              <Image src={github} alt={'github icon'}/>
+              <Image src={discord} alt={'discord icon'}/>
+              <Image src={twitter} alt={'twitter'}/>
+              <Image src={twitch} alt={'twitch'}/>
           </div>
       </section>
   )

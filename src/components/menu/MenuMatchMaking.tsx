@@ -18,15 +18,15 @@ export const MatchMakingItems = () => {
     const {setOneVsOne,setFiveVsFive} = useActions(appActions)
 
 
-    const clickHandler:MouseEventHandler<HTMLButtonElement> = () => {
-        setOneVsOne({oneVSOne:true})
+    const clickHandler:MouseEventHandler<HTMLDivElement> = () => {
+        setOneVsOne({oneVSOne:!isActive})
         setFiveVsFive({fiveVSFive:false})
-        setIsActive(!isActive)
         setIsActiveForFive(false)
+        setIsActive(!isActive)
     }
 
-    const clickHandlerForFive:MouseEventHandler<HTMLButtonElement> = () => {
-        setFiveVsFive({fiveVSFive:true})
+    const clickHandlerForFive:MouseEventHandler<HTMLDivElement> = () => {
+        setFiveVsFive({fiveVSFive:!isActiveForFive})
         setOneVsOne({oneVSOne:false})
         setIsActiveForFive(!isActiveForFive)
         setIsActive(false)
