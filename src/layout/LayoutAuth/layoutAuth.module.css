@@ -1,0 +1,43 @@
+.container{
+    width: 100%;
+    background-color:#1E1E1E ;
+    z-index: -1;
+}
+
+.backgroundGreen{
+    background: #08DE2B;
+    opacity: 0.6;
+    filter: blur(159px);
+    position: absolute;
+    left: 17px;
+    top: -200px;
+}
+
+.backgroundBlue{
+    background: #0B69F7;
+    filter: blur(273px);
+    position: absolute;
+    left: 100px;
+    width: 100px;
+}
+
+.backgroundCircles {
+    position: absolute;
+    right: 140px;
+    top:-10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 600px;
+    height: 800px;
+    margin: 35px;
+}
+
+.backgroundLogo{
+    position: absolute;
+    left: 18%;
+    bottom: 0;
+}

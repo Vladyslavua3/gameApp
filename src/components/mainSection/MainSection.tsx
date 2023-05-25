@@ -13,6 +13,7 @@ import {useActions} from "@/hooks/useActions";
 import {appActions} from "@/app/appReducer";
 import {useSelector} from "react-redux";
 import {selectFiveVsFive, selectOneVsOne} from "@/app/appSelectors";
+import Link from "next/link";
 
 const inter = Lato({ weight:'400',subsets: ['latin'] })
 

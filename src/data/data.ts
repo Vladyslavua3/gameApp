@@ -1,4 +1,4 @@
-import {MainSectionType, MenuItemType} from "@/pages";
+import {MenuItemType} from "@/pages";
 import iconCompass from '../data/img/iconCompass.png'
 import iconAdd from '../data/img/iconAdd.png'
 import iconShield from '../data/img/iconShield.png'
