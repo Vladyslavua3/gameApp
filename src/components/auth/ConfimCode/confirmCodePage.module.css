@@ -1,0 +1,105 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200px;
+}
+
+.formDivConfirm {
+    border-radius: 19px;
+    width: 550px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 1;
+    margin-top: 200px;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.inputContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.inputStyle{
+    width: 50px;
+}
+
+.codeInput {
+    font-size: 1.5em;
+    width: 50px;
+    text-align: center;
+    flex: 1 0 1em;
+    background: transparent;
+    margin: 10px;
+    outline: none;
+    border: 1px solid green;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.input {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn{
+    width: 180px;
+    height: 35px;
+    background: linear-gradient(270.68deg, #166025 42.97%, #1A2C47 75.01%);
+    border-radius: 32px;
+    color: white;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.resendStyle{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+}
+
+.infoLink {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: rgba(68, 97, 242, 1);
+    z-index: 10;
+}
+
+.logo{
+    position: absolute;
+    bottom: 0;
+}
+
+.confirmTitle{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 77px;
+    color: white;
+}
