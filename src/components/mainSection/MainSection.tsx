@@ -14,6 +14,7 @@ import {appActions} from "@/app/appReducer";
 import {useSelector} from "react-redux";
 import {selectFiveVsFive, selectOneVsOne} from "@/app/appSelectors";
 import Link from "next/link";
+import {ConfirmModal} from "@/components/mainSection/confirmModal/ConfirmModal";
 
 const inter = Lato({ weight:'400',subsets: ['latin'] })
 
@@ -44,6 +45,9 @@ const FiveVsFiveSection = () => {
     const {setFiveVsFive} = useActions(appActions)
 
     const isFiveVsFive = useSelector(selectFiveVsFive)
+
+    if(isSearching) return <ConfirmModal/>
+
 
     return(
         <div className={styles.containerForOne}>
