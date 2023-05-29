@@ -15,6 +15,7 @@ import {useSelector} from "react-redux";
 import {selectFiveVsFive, selectOneVsOne} from "@/app/appSelectors";
 import Link from "next/link";
 import {ConfirmModal} from "@/components/mainSection/confirmModal/ConfirmModal";
+import {GameSection} from "@/components/mainSection/gameSection/GameSection";
 
 const inter = Lato({ weight:'400',subsets: ['latin'] })
 
@@ -77,26 +78,27 @@ export const MainSection = () => {
 
     return (
         <section className={styles.container}>
-            {
-                isOneVsOne ? <OneVsOneSection/> : isFiveVsFive ? <FiveVsFiveSection/>
-                    : <button
-                        className={styles.btn}
-                        style={inter.style}
-                    >Create Party</button>
-            }
-            <div>
-                <Image src={Banner} alt={'CSGO Banner'} width={'80vh'}/>
-            </div>
-            <div>
-                <h2 className={styles.fontWhite}>Active Competitions</h2>
-                <Image src={card1} alt={'CSGO Promotion'} />
-                <Image src={card2} alt={'CSGO Promotion'} />
-            </div>
-            <div>
-                <h2 className={styles.fontWhite}>Upcoming Events</h2>
-                <Image src={card3} alt={'CSGO Promotion'} />
-                <Image src={card4} alt={'CSGO Promotion'} />
-            </div>
+            {/*{*/}
+            {/*    isOneVsOne ? <OneVsOneSection/> : isFiveVsFive ? <FiveVsFiveSection/>*/}
+            {/*        : <button*/}
+            {/*            className={styles.btn}*/}
+            {/*            style={inter.style}*/}
+            {/*        >Create Party</button>*/}
+            {/*}*/}
+            {/*<div>*/}
+            {/*    <Image src={Banner} alt={'CSGO Banner'} width={'80vh'}/>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <h2 className={styles.fontWhite}>Active Competitions</h2>*/}
+            {/*    <Image src={card1} alt={'CSGO Promotion'} />*/}
+            {/*    <Image src={card2} alt={'CSGO Promotion'} />*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <h2 className={styles.fontWhite}>Upcoming Events</h2>*/}
+            {/*    <Image src={card3} alt={'CSGO Promotion'} />*/}
+            {/*    <Image src={card4} alt={'CSGO Promotion'} />*/}
+            {/*</div>*/}
+            <GameSection/>
         </section>
     )
 }
