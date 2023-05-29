@@ -6,8 +6,6 @@ const initialState = {
     fiveVSFive:false
 }
 
-
-
 const slice = createSlice({
     name:'app',
     initialState,
