@@ -1,4 +1,3 @@
-import {MenuItemType} from "@/pages";
 import iconCompass from '../data/img/iconCompass.png'
 import iconAdd from '../data/img/iconAdd.png'
 import iconShield from '../data/img/iconShield.png'
@@ -6,7 +5,7 @@ import iconStar from '../data/img/iconStar.png'
 import iconHome from '../data/img/iconHome.png'
 import iconCup from '../data/img/cup.png'
 
-export const menuItems: MenuItemType[] = [
+export const menuItems = [
     {
         img: iconHome,
         name: 'HOME'
