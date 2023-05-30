@@ -97,7 +97,7 @@ export const MainSection = () => {
                             >Create Party</button>
                     }
                 <div>
-                <Image src={Banner} alt={'CSGO Banner'} width={'80vh'}/>
+                <Image src={Banner} alt={'CSGO Banner'} width={80}/>
                 </div>
                 <div>
                 <h2 className={styles.fontWhite}>Active Competitions</h2>
