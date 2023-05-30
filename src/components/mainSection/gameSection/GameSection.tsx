@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Image from "next/image";
+import Image, {ImageProps} from "next/image";
 import player1 from '../../../data/img/Player1.png'
 import player2 from '../../../data/img/secondPlayer.png'
 import mapLego from '../../../data/img/mapLego.png'
@@ -41,11 +41,11 @@ export const GameSection = () => {
         img:Image
     })
 
-    let finalMap = {}
+
 
     useEffect( () => {
 
-        let res = []
+        let res:any = []
 
         for (let gameKey in game) {
             if(game[gameKey].isSelected){
@@ -58,7 +58,6 @@ export const GameSection = () => {
             lastMap.current = res[0]
         }
 
-        console.log(finalMap)
 
     },[game])
 
