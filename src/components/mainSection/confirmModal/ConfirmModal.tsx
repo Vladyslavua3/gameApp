@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import style from "./confirm.module.css";
+import {useActions} from "@/hooks/useActions";
+import {appActions} from "@/app/appReducer";
 
   
 
@@ -9,6 +11,7 @@ export const ConfirmModal = () => {
 
     const secondString = String(timer % 60).padStart(2,"0")
 
+    const {setConfirmGame} = useActions(appActions)
 
     useEffect(()=>{
         setInterval(()=>{
@@ -16,6 +19,10 @@ export const ConfirmModal = () => {
         },1000)
     },[])
 
+
+    const handler = () => {
+        setConfirmGame({confirmGame:true})
+    }
 
   return(
       <div className={style.container}>
@@ -28,7 +35,7 @@ export const ConfirmModal = () => {
                   }
                   </h2>
               </div>
-              <button className={style.btn}>CONFIRM MATCH</button>
+              <button className={style.btn} onClick={handler}>CONFIRM MATCH</button>
           </div>
       </div>
   )

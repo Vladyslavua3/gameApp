@@ -12,18 +12,23 @@ import {useState} from "react";
 import {useActions} from "@/hooks/useActions";
 import {appActions} from "@/app/appReducer";
 import {useSelector} from "react-redux";
-import {selectFiveVsFive, selectOneVsOne} from "@/app/appSelectors";
-import Link from "next/link";
+import {selectConfirmGame, selectFiveVsFive, selectOneVsOne} from "@/app/appSelectors";
 import {ConfirmModal} from "@/components/mainSection/confirmModal/ConfirmModal";
 import {GameSection} from "@/components/mainSection/gameSection/GameSection";
 
-const inter = Lato({ weight:'400',subsets: ['latin'] })
 
+const inter = Lato({ weight:'400',subsets: ['latin'] })
 
 
 const OneVsOneSection = () => {
 
     const [isSearching,setIsSearching] = useState<boolean>(false)
+
+    const handler = () => {
+        setIsSearching(!isSearching)
+    }
+
+    if(isSearching) return <ConfirmModal/>
 
     return(
         <div className={styles.containerForOne}>
@@ -33,7 +38,7 @@ const OneVsOneSection = () => {
                 <Image src={plus} alt={'player'}/>
             </div>
             {isSearching && <p className={styles.fontWhite}>SEARCHING</p>}
-            <button  className={styles.btnForSearching} style={inter.style} onClick={() => setIsSearching(!isSearching)}>{!isSearching ? 'SEARCH' : 'CANCEL'}</button>
+            <button  className={styles.btnForSearching} style={inter.style} onClick={handler}>{!isSearching ? 'SEARCH' : 'CANCEL'}</button>
         </div>
     )
 }
@@ -46,8 +51,6 @@ const FiveVsFiveSection = () => {
     const {setFiveVsFive} = useActions(appActions)
 
     const isFiveVsFive = useSelector(selectFiveVsFive)
-
-    if(isSearching) return <ConfirmModal/>
 
 
     return(
@@ -75,30 +78,39 @@ export const MainSection = () => {
 
     const isFiveVsFive = useSelector(selectFiveVsFive)
 
+    const isConfirmed = useSelector(selectConfirmGame)
+
 
     return (
         <section className={styles.container}>
-            {/*{*/}
-            {/*    isOneVsOne ? <OneVsOneSection/> : isFiveVsFive ? <FiveVsFiveSection/>*/}
-            {/*        : <button*/}
-            {/*            className={styles.btn}*/}
-            {/*            style={inter.style}*/}
-            {/*        >Create Party</button>*/}
-            {/*}*/}
-            {/*<div>*/}
-            {/*    <Image src={Banner} alt={'CSGO Banner'} width={'80vh'}/>*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <h2 className={styles.fontWhite}>Active Competitions</h2>*/}
-            {/*    <Image src={card1} alt={'CSGO Promotion'} />*/}
-            {/*    <Image src={card2} alt={'CSGO Promotion'} />*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <h2 className={styles.fontWhite}>Upcoming Events</h2>*/}
-            {/*    <Image src={card3} alt={'CSGO Promotion'} />*/}
-            {/*    <Image src={card4} alt={'CSGO Promotion'} />*/}
-            {/*</div>*/}
-            <GameSection/>
+            {
+                isConfirmed ?
+                    <GameSection/>
+                    :
+                    <div className={styles.box}>
+                    {
+                        isOneVsOne ? <OneVsOneSection/> : isFiveVsFive ?
+                            <FiveVsFiveSection/>
+                            : <button
+                                className={styles.btn}
+                                style={inter.style}
+                            >Create Party</button>
+                    }
+                <div>
+                <Image src={Banner} alt={'CSGO Banner'} width={'80vh'}/>
+                </div>
+                <div>
+                <h2 className={styles.fontWhite}>Active Competitions</h2>
+                <Image src={card1} alt={'CSGO Promotion'} />
+                <Image src={card2} alt={'CSGO Promotion'} />
+                </div>
+                <div>
+                <h2 className={styles.fontWhite}>Upcoming Events</h2>
+                <Image src={card3} alt={'CSGO Promotion'} />
+                <Image src={card4} alt={'CSGO Promotion'} />
+                </div>
+                    </div>
+            }
         </section>
     )
 }
