@@ -4,8 +4,9 @@ import iconShield from '../data/img/iconShield.png'
 import iconStar from '../data/img/iconStar.png'
 import iconHome from '../data/img/iconHome.png'
 import iconCup from '../data/img/cup.png'
+import {MenuItemType} from "@/components/menu/MenuItem";
 
-export const menuItems = [
+export const menuItems:MenuItemType[] = [
     {
         img: iconHome,
         name: 'HOME'
@@ -32,13 +33,6 @@ export const menuItems = [
     },
 ]
 
-
-export const matchItems = [
-    '1v1 RANKED',
-    '5v5 RANKED Vip',
-    '5v5 UNRANKED',
-    'PUBLIC WARMUP'
-    ]
 
 
 

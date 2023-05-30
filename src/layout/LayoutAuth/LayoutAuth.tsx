@@ -9,7 +9,6 @@ import yellowCircle from '../../data/img/ellipseYellow.png'
 import greenCircle from '../../data/img/ellipseGreen.png'
 import blueCircle from '../../data/img/ellipseBlue.png'
 import backgroundLogo from '../../data/img/logoImg.png'
-import {inter} from "@/pages";
 
 
 export const LayoutAuth: NextPage<PropsWithChildren> = (props) => {

@@ -9,13 +9,12 @@ import twitter from "@/data/img/twitter.png";
 import twitch from "@/data/img/twitch.png";
 import {MatchMakingItems} from "@/components/menu/MenuMatchMaking";
 import {MenuItem} from "@/components/menu/MenuItem";
-import {matchItems, menuItems} from "@/data/data";
+import {menuItems} from "@/data/data";
 
 
 
 const menuData = menuItems
 
-const matchData = matchItems
 
 export const Menu = () => {
 
