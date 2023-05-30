@@ -16,7 +16,8 @@ import {
     selectRedLineMap,
     selectShred
 } from "@/components/mainSection/gameReducer/gameSelector";;
-import {PreparingMatch} from "@/components/mainSection/PreparingMatch/PreparingMatch";
+import {PreparingMatch} from "@/components/mainSection/PreparingMatch/PreparingMatch";;
+
 
 
 export const GameSection = () => {
@@ -31,31 +32,38 @@ export const GameSection = () => {
 
     const shred = useSelector(selectShred)
 
-    const game = useSelector(selectGame)
+    const game:any = useSelector(selectGame)
 
     const [chooseMap,setChooseMap] = useState(false)
 
     const lastMap = useRef({
         name:'',
         isSelected:false,
-        img:Image
+        img:Image as unknown as ImageProps
     })
 
-
+    type resType = {
+        name:string,
+        isSelected:boolean,
+        img:ImageProps
+    }
 
     useEffect( () => {
 
-        let res:any = []
+        let res:resType[] = []
 
         for (let gameKey in game) {
-            if(game[gameKey].isSelected){
-                res = [...res,game[gameKey]]
-            }
+            if (game.hasOwnProperty(gameKey)) {
+                const gameValue = game[gameKey];
+                if (gameValue.isSelected) {
+                  res = [...res, gameValue];
+                }
+              }
         }
 
         if (res.length === 1) {
             setChooseMap(true)
-            lastMap.current = res[0]
+            lastMap.current = {...res[0]}
         }
 
 
