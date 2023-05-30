@@ -1,0 +1,43 @@
+.container{
+    border: 1px solid #767272;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.title{
+    text-align: center;
+    margin: 15px;
+}
+
+.linkBox{
+    width: 500px;
+    height: 85px;
+    border: 1px solid #767272;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.link{
+    width: 329px;
+    height: 50px;
+    border: 1px solid #767272;
+    border-radius: 10px;
+}
+
+.btn{
+    border: none;
+    color: white;
+    width: 108px;
+    height: 39px;
+    background: #0D5E00;
+    border-radius: 10px;
+    margin: 10px;
+}

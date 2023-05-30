@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Image from "next/image";
 import player1 from '../../../data/img/Player1.png'
 import player2 from '../../../data/img/secondPlayer.png'
@@ -16,10 +16,8 @@ import {
     selectByLouMap, selectGame,
     selectRedLineMap,
     selectShred
-} from "@/components/mainSection/gameReducer/gameSelector";
-import {MainSection} from "@/components/mainSection/MainSection";
-import {retry} from "@reduxjs/toolkit/query";
-
+} from "@/components/mainSection/gameReducer/gameSelector";;
+import {PreparingMatch} from "@/components/mainSection/PreparingMatch/PreparingMatch";
 
 
 export const GameSection = () => {
@@ -38,8 +36,15 @@ export const GameSection = () => {
 
     const [chooseMap,setChooseMap] = useState(false)
 
+    const lastMap = useRef({
+        name:'',
+        isSelected:false,
+        img:Image
+    })
 
-    useEffect(() => {
+    let finalMap = {}
+
+    useEffect( () => {
 
         let res = []
 
@@ -48,11 +53,14 @@ export const GameSection = () => {
                 res = [...res,game[gameKey]]
             }
         }
-        if(res.length === 1){
+
+        if (res.length === 1) {
             setChooseMap(true)
+            lastMap.current = res[0]
         }
 
-        console.log(res)
+        console.log(finalMap)
+
     },[game])
 
 
@@ -66,7 +74,6 @@ export const GameSection = () => {
             setTimer((s) => Math.max(s - 1, 0) )
         },1000)
     },[])
-
 
 
 
@@ -94,45 +101,52 @@ export const GameSection = () => {
 
     return (
         <div className={style.container}>
-            {chooseMap && <div>Found</div>}
             <div className={style.box}>
             <div className={style.playersBox}>
                 <Image src={player1} alt={'player1'}/>
                 <span>VS</span>
                 <Image src={player2} alt={'player2'}/>
             </div>
-            <div className={style.timerBox}>
-                <h2>
-                {
-                    secondString
+                {chooseMap ? <div><PreparingMatch name={lastMap.current.name} img={lastMap.current.img}/></div> :
+                    <div className={style.box}>
+                    <div className={style.timerBox}>
+                        <h2>
+                            {
+                                secondString
+                            }
+                        </h2>
+                    </div>
+                    <div className={style.mapsBox}>
+                    <ul style={{listStyleType:'none'}}>
+                    <li className={style.mapBox}>
+                    <Image src={mapRedLine} alt={'mapRedLine'}/>
+                    <h3>MAP-Aim_Redline</h3>
+                    <button onClick={handlerForRedLine}  disabled={!redMap.isSelected} className={redMap.isSelected ? style.btn : style.selectedBtn}>BAN</button>
+                    </li>
+                    <li className={style.mapBox}>
+                    <Image src={mapLou} alt={'mapLou'}/>
+                    <h3>MAP-1v1 Aim by LOU</h3>
+                    <button onClick={handlerForLou} disabled={!byLou} className={byLou.isSelected ? style.btn : style.selectedBtn}>BAN</button>
+                    </li>
+                    <li className={style.mapBox}>
+                    <Image src={mapLego} alt={'mapLego'}/>
+                    <h3>MAP-AWP_Lego_Neon</h3>
+                    <button onClick={handlerForLego} disabled={!awpLego} className={awpLego.isSelected ? style.btn : style.selectedBtn}>BAN</button>
+                    </li>
+                    <li className={style.mapBox}>
+                    <Image src={mapShred} alt={'mapShred'}/>
+                    <h3>MAP-Shred</h3>
+                    <button onClick={handlerForShred} disabled={!shred} className={shred.isSelected ? style.btn : style.selectedBtn}>BAN</button>
+                    </li>
+                    </ul>
+                    </div>
+                    </div>
                 }
-                </h2>
-            </div>
-            <div className={style.mapsBox}>
-                <ul style={{listStyleType:'none'}}>
-                    <li className={style.mapBox}>
-                        <Image src={mapRedLine} alt={'mapRedLine'}/>
-                        <h3>MAP-Aim_Redline</h3>
-                        <button onClick={handlerForRedLine}  disabled={!redMap.isSelected} className={redMap.isSelected ? style.btn : style.selectedBtn}>BAN</button>
-                    </li>
-                    <li className={style.mapBox}>
-                        <Image src={mapLou} alt={'mapLou'}/>
-                        <h3>MAP-1v1 Aim by LOU</h3>
-                        <button onClick={handlerForLou} disabled={!byLou} className={byLou.isSelected ? style.btn : style.selectedBtn}>BAN</button>
-                    </li>
-                    <li className={style.mapBox}>
-                        <Image src={mapLego} alt={'mapLego'}/>
-                        <h3>MAP-AWP_Lego_Neon</h3>
-                        <button onClick={handlerForLego} disabled={!awpLego} className={awpLego.isSelected ? style.btn : style.selectedBtn}>BAN</button>
-                    </li>
-                    <li className={style.mapBox}>
-                        <Image src={mapShred} alt={'mapShred'}/>
-                        <h3>MAP-Shred</h3>
-                        <button onClick={handlerForShred} disabled={!shred} className={shred.isSelected ? style.btn : style.selectedBtn}>BAN</button>
-                    </li>
-                </ul>
-            </div>
             </div>
         </div>
     );
 };
+
+
+
+
