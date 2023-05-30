@@ -3,7 +3,9 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 const initialState = {
     oneVSOne: false,
-    fiveVSFive:false
+    fiveVSFive:false,
+    confirmGame:false,
+    isSearching:false
 }
 
 const slice = createSlice({
@@ -15,6 +17,12 @@ const slice = createSlice({
         },
         setFiveVsFive:(state, action:PayloadAction<{fiveVSFive:boolean}>) => {
             state.fiveVSFive = action.payload.fiveVSFive
+        },
+        setConfirmGame:(state, action:PayloadAction<{confirmGame:boolean}>) => {
+            state.confirmGame = action.payload.confirmGame
+        },
+        setIsSearching:(state, action:PayloadAction<{isSearching:boolean}>) => {
+            state.isSearching = action.payload.isSearching
         }
     },
 })
