@@ -8,7 +8,6 @@ import mapRedLine from '../../../data/img/mapRedline.png'
 import mapShred from '../../../data/img/mapShred.png'
 import style from './gameSection.module.css'
 import {useActions} from "@/hooks/useActions";
-import {appActions} from "@/app/appReducer";
 import {mapsActions} from "@/components/mainSection/gameReducer/gameReducer";
 import {useSelector} from "react-redux";
 import {

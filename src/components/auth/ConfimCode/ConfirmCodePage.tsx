@@ -18,12 +18,12 @@ export const ConfirmCodePage = () => {
             <div className={style.formDivConfirm}>
                 <form className={style.form}>
                     <div className={style.inputContainer}>
-                        <input className={style.codeInput} type={'tel'} maxLength={'1'} required/>
-                        <input className={style.codeInput} type={'tel'} maxLength={'1'} required/>
-                        <input className={style.codeInput} type={'tel'} maxLength={'1'} required/>
-                        <input className={style.codeInput} type={'tel'} maxLength={'1'} required/>
-                        <input className={style.codeInput} type={'tel'} maxLength={'1'} required/>
-                        <input className={style.codeInput} type={'tel'} maxLength={'1'} required/>
+                        <input className={style.codeInput} type={'tel'} maxLength={1} required/>
+                        <input className={style.codeInput} type={'tel'} maxLength={1} required/>
+                        <input className={style.codeInput} type={'tel'} maxLength={1} required/>
+                        <input className={style.codeInput} type={'tel'} maxLength={1} required/>
+                        <input className={style.codeInput} type={'tel'} maxLength={1} required/>
+                        <input className={style.codeInput} type={'tel'} maxLength={1} required/>
                     </div>
                     <button className={style.btn} style={lato.style}>Confirm Code</button>
                     <p className={style.resendStyle}>if you did not get email you can <Link href={'/'} className={style.infoLink}>Resend here!</Link></p>
